@@ -14,8 +14,6 @@
 <!ELEMENT quantity (#PCDATA)>
 <!ELEMENT price (#PCDATA)>
 ]>
-<!--за вътрешно dtd съдържанието на dtd файла се вмъква преди съдържанеито
-на xml файла shiporder е root елементът на xml файла-->
 <shiporder orderid="889923">
    <orderperson>John Smith</orderperson>
    <shipto>
