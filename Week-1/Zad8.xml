@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<paradise>
+	<info>
+		<address>София, бул. Черни връх 100, в сградата на Paradise Center</address>
+		<tel>02 903 74 74 </tel>
+		<email>info.paradise@cinemacity.bg</email>
+	</info>
+	<price>
+		<monday>8</monday>
+		<tuesday>8</tuesday>
+		<wednesday>8</wednesday>
+		<thursday>8</thursday>
+		<friday>10</friday>
+		<saturday>12</saturday>
+		<sunday>12</sunday>
+	</price>
+	<movies>
+		<movie name="100% WOLF" date="15.10">
+            <hour>13:10</hour>
+            <hour>13:10</hour>
+        </movie>
+		<movie name="BABY BOSS: FAMILY AFFAIRS" date="15.10">
+            <hour>15:40</hour>
+        </movie>
+		<movie name="VENOM 2: IT'S TIME FOR CARRIDGE" date="16.10">
+            <hour>13:30</hour>
+            <hour>15:30</hour>
+            <hour>18:10</hour>
+            <hour>19:20</hour>
+            <hour>21:50</hour>
+        </movie>
+        <movie name="SPACE DIVE: NEW LEGENDS" date="16.10">
+            <hour>18:20</hour>
+        </movie>
+        <movie name="CRUDE: A NEW ERA" date="17.10">
+            <hour>15:00</hour>
+        </movie>
+        <movie name="HOUSE IN THE DARK" date="17.10">
+            <hour>14:20</hour>
+        </movie>
+        <movie name="LUKE'S SUMMER ADVENTURE" date="18.10">
+            <hour>13:40</hour>
+        </movie>
+        <movie name="DOG PATROL: THE MOVIE" date="18.10">
+            <hour>16:10</hour>
+        </movie>
+        <movie name="THE LAST DUEL" date="19.10">
+            <hour>13:10</hour>
+            <hour>21:10</hour>
+        </movie>
+        <movie name="FREE PLAYER" date="19.10">
+            <hour>20:20</hour>
+        </movie>
+        <movie name="THE ADAMS FAMILY 2" date="20.10">
+            <hour>13:20</hour>
+            <hour>18:20</hour>
+        </movie>
+        <movie name="MY SON" date="20.10">
+            <hour>14:50</hour>
+        </movie>
+        <movie name="AFTER THE FALL" date="20.10">
+            <hour>20:45</hour>
+        </movie>
+        <movie name="DEATH CAN WAIT" date="19.10">
+            <hour>13:50</hour>
+            <hour>17:10</hour>
+            <hour>20:20</hour>
+        </movie>
+        <movie name="SHANG-CHI AND THE LEGEND OF THE TEN RINGS" date="19.10">
+            <hour>18:20</hour>
+        </movie>
+	</movies>
+</paradise>
