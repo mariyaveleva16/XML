@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<recipe author="Анонимен">
+<name>Бисквитена торта</name>
+<address>
+    <site>www.recipes.com</site>
+</address>
+<ingredients>
+  <list>
+    <!--2. Добавяме атрибути за брой и грамаж към елементите item-->
+    <item count="1">пакет бисквити</item>
+    <item count="1">кофичка кисело мляко</item>
+    <item count="1">бурканче сладко</item>
+    <!--1. Добавяме 2 нови елемента item-->
+    <item weight="100g">пудра захар</item>
+    <item weight="50g">какaо</item>
+  </list>
+</ingredients>
+<process>
+  <p>Разбъркваме млякото и сладкото. Един ред бисквити, един ред от сместа и пак така, най-отгоре поръсваме орехи. Изчаква се до омекване на бисквитите.</p>
+<p><i>Много вкусно!</i></p>
+</process>
+<images>
+    <image>Picture1</image>
+    <image>Picture2</image>
+</images>
+</recipe>
