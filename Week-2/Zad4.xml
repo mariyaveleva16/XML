@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--PUBLIC посочва общодостъпен публичен стандарт
+SYSTEM - указва локален URL(на който се намира dtd граматиката)-->
+<!--Примерно xml съдържание-->
+<html>
+    <head>
+        <title>My title</title>
+    </head>
+    <body>My body</body>
+</html>

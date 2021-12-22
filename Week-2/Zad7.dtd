@@ -1,0 +1,26 @@
+<!ENTITY %titleElement "title">
+<!--3. Параметризирано entity със стойност "title" и заместваме "title" навсякъде в документа с %titleElement;-->
+<!ENTITY %channelElements "(item+,%titleElement;,link,image*,language?,description)">
+<!--4. Вложено ENTITY в ENTITY - %titleElement е вложено в %channelElements-->
+<!ELEMENT channel %channelEleme;>
+<!ATTLIST channel version CDATA #IMPLIED>
+<!ELEMENT item ((%titleElement;,link,description?)|(link,%titleElement;,description?)|(%titleElement;,description?,link)|
+				(link,description?,%titleElement;|(description?,%titleElement;,link)|(description?,link,%titleElement;))>
+<!ELEMENT %titleElement; (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT image ((%titleElement;,link,url)|(%titleElement;,url,link)|(link,url,%titleElement;)|
+                (link,%titleElement;,url)|(url,%titleElement;,link)|(url,link,%titleElement;))>
+<!ATTLIST image type ENTITY #REQUIRED>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!NOTATION jpg SYSTEM "image/jpg">
+<!--1. вътрешна (System) DTD нотация-->
+<!NOTATION png PUBLIC "PNG">
+<!--1. външна (Public) DTD нотация-->
+<!NOTATION gif PUBLIC "GIF" "image/gif">
+<!--1. entity използващо 2те нотации-->
+<!ENTITY adressJPG SYSTEM "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg" NDATA jpg>
+<!ENTITY adressPNG SYSTEM "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" NDATA png>
+<!--2. entity задаващо стойността на елемента link на image-->
+<!--5. Не могат да се използват рекурсивно-->

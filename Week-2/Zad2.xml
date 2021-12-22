@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--Добавяме вътрешна dtd граматика games е root елементът-->
+<!DOCTYPE games[
+<!ELEMENT games (game*)>
+<!--има звездичка, тъй като може да има няколко игри(в случая е само една)-->
+<!ELEMENT game (home-team,ex-team,scores,yellows,reds)><!--Поделемнтите на game-->
+<!ATTLIST game score CDATA #REQUIRED>
+<!--Всяка игра(game) има задължителен атрибут score(резyлтатът от мача)-->
+<!ELEMENT home-team (#PCDATA)><!--home-team е от тип #PCDATA-->
+<!ELEMENT ex-team (#PCDATA)><!--ex-team е от тип #PCDATA-->
+<!ELEMENT scores (score*)>
+<!-- вкараните голове те ще са 0 или повече-->
+<!ELEMENT score (player)>
+<!--всеки гол е вкаран от точно един играч-->
+<!ATTLIST score me CDATA #REQUIRED>
+<!--всеки гол има задължителен атриут me-->
+<!ATTLIST score type CDATA #IMPLIED>
+<!--всеки гол има незадължителен атриут type-->
+<!ELEMENT player (#PCDATA)><!--player е от тип #PCDATA-->
+<!ELEMENT yellows (player*)>
+<!--жълти картони са получени от 0 или няколко играча-->
+<!ELEMENT reds (player*)>
+<!--червени картони те са получени от 0 или няколко играча-->
+]>
+<games>
+    <game score="1-1">
+        <home-team>Roma</home-team>
+        <ex-team>Lazio</ex-team>
+        <scores>
+            <score me="15">
+            <player>Klose</player>
+            </score>
+            <score me="85" type="penalty">
+            <player>Tox</player>
+            </score>
+        </scores>
+        <yellows>
+           <player>Tox</player>
+           <player>Hernanes</player>
+        </yellows>
+        <reds>
+           <player>Kjaer</player>
+        </reds>
+    </game>
+</games>

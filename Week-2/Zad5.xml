@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE channel [
+<!ELEMENT channel (item+,title,link,image*,language?,description)><!--На нарисуваната схема image и language са с разменени места, но в условието са с тази подредба -->
+<!--channel има 1 или няколко item, title,link, 0 или няколко image, 
+0 или 1 language и description в точно тази определена последователност-->
+<!ATTLIST channel version CDATA #IMPLIED>
+<!--channel има незадължителен атрибут version-->
+<!ELEMENT item ((title,link,description?)|(link,title,description?)|(title,description?,link)|
+				(link,description?,title)|(description?,title,link)|(description?,link,title))>
+<!--item има title,link и може и да има description, елементите нямат точно определена последователност,
+за това изреждаме всички възможни варианти разделени с | означаваща или-->
+<!ELEMENT title (#PCDATA)><!--title е от тип #PCDATA-->
+<!ELEMENT link (#PCDATA)><!--link е от тип #PCDATA-->
+<!ELEMENT image ((title,link,url)|(title,url,link)|(link,url,title)|
+                (link,title,url)|(url,title,link)|(url,link,title))>
+<!--image има title,link и url, елементите нямат точно определена последователност,
+за това изреждаме всички възможни варианти разделени с | означаваща или-->
+<!ELEMENT language (#PCDATA)><!--language е от тип #PCDATA-->
+<!ELEMENT description (#PCDATA)><!--description е от тип #PCDATA-->
+<!ELEMENT url (#PCDATA)><!--url е от тип #PCDATA-->
+]>
+<!--Примерно xml съдържание-->
+<channel version="123"><!--имаме добавен незадължителния атрибут version-->
+    <!--имаме няколко item с различни последователности на поделементите им и в последния нямаме description-->
+    <item>
+        <title>My item title 1</title>
+        <link>www.linkitem1.com</link>
+        <description>Description of item 1</description>
+    </item>
+    <item>
+        <description>Description of item 2</description>
+        <title>My item title 2</title>
+        <link>www.linkitem2.com</link>
+    </item>    
+    <item>
+        <link>www.linkitem3.com</link>    
+        <title>My item title 3</title>
+    </item>
+    <title>My title</title>
+    <link>www.link.com</link>
+    <!--имаме няколко image с различни последователности на поделементите им-->
+    <image>
+        <title>My img title 1</title>
+        <link>www.linkimg1.com</link>
+        <url>Url1</url>
+    </image>
+    <image>
+        <link>www.linkimg2.com</link>
+        <url>Url2</url>
+        <title>My img title 2</title>
+    </image>
+    <language>English</language>
+    <description>Some description</description>
+</channel>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Подреждаме си dtd граматиката за да ни е по-удобно да работим с нея
+и я добавяме като вътешна в xml файла като Course_Catalog ще ни бъде root елементът в xml файлът-->
+<!DOCTYPE Course_Catalog[
+<!ELEMENT Course_Catalog (Department+)>
+<!--Course_Catalog има Department които са 1 или повече-->
+<!ELEMENT Department (Title, Chair, Course+)>
+<!--Всеки Department има Title, Chair и 1 или няколко Course-->
+<!ATTLIST Department Code (CS | EE | LING) #REQUIRED>
+<!--Всеки Department има задължителен атрибу, който е един от посочените три CS, EE, LING-->
+<!ELEMENT Title (#PCDATA)>
+<!--Title е от тип #PCDATA-->
+<!ELEMENT Chair (Professor)>
+<!--Всеки Chair има точно 1 Professor-->
+<!ELEMENT Professor (First_Name, Middle_Initial?, Last_Name)>
+<!--Всеки Professor има First_Name,Last_Name и може да има Middle_Initial-->
+<!ELEMENT First_Name (#PCDATA)>
+<!ELEMENT Middle_Initial (#PCDATA)>
+<!ELEMENT Last_Name (#PCDATA)>
+<!--First_Name, Middle_Initial, Last_Name са от тип #PCDATA-->
+<!ELEMENT Course (Title, Description?, Instructors, Prerequisites?)>
+<!--Всеки Course има Title, Instructors и може да има Description, Prerequisites-->
+<!ATTLIST Course
+    Number (CS106A | CS106B | CS107 | CS109 | CS124 | CS143 | CS145 | CS221 | CS228 | CS229 | EE108A | EE108B | LING180) #REQUIRED
+    Enrollment (1070 | 110 | 130 | 180 | 280 | 320 | 500 | 60 | 620 | 90) #IMPLIED>
+<!--Всеки Course има задължителен атрибут Number,който е един от изброените
+и незадължителен атрибут Enrollment,който е един от изброените-->
+<!ELEMENT Description (#PCDATA)><!--Description е от тип #PCDATA-->
+<!ELEMENT Instructors ((Lecturer, Professor*) | (Professor+, Lecturer?))>
+<!--Instructors се състои от 1 Lecturer и 0 или няколко Professor
+или от 1 или няколко Professor и 0 или 1 Lecturer-->
+<!ELEMENT Lecturer (First_Name, Middle_Initial?, Last_Name)>
+<!--Всеки Lecturer има First_Name,Last_Name и може да има Middle_Initial-->
+<!ELEMENT Prerequisites (Prereq+)>
+<!--Всеки Prerequisites се състои от 1 или няколко Prereq-->
+<!ELEMENT Prereq (#PCDATA)><!--Prereq е от тип #PCDATA-->
+]>
+<!--Примерно xml съдържание-->
+<Course_Catalog><!--root елементът Course_Catalog-->
+	<Department Code="CS"><!--В случая имаме само 1 Department но може да имаме няколко и има задължиелния атрибут CS-->
+		<Title>FMI</Title>
+		<Chair>
+			<Professor>
+				<First_Name>Ivan</First_Name>
+				<Middle_Initial>P.</Middle_Initial>
+				<Last_Name>Ivanov</Last_Name>
+                <!--Professor има First_Name,Last_Name и в случая има Middle_Initial-->
+			</Professor>
+		</Chair>
+		<Course Number="LING180"> <!--Може да имаме няколко курса; този има само задължителния атрбут Number-->
+			<Title>Java</Title>
+			<Description>Learning Java</Description> <!--Имаме и описание-->
+			<Instructors> <!--В случая е избран първия вариант 1 Lecturer и 0 или няколко Professor-->
+				<Lecturer>
+					<First_Name>Petar</First_Name>
+					<Last_Name>Petrov</Last_Name>
+                    <!--Lecturer има First_Name,Last_Name и в случая няма Middle_Initial-->
+				</Lecturer>
+			</Instructors>
+			<Prerequisites><!--Имаме Prerequisites-->
+				<Prereq>Prerequisite 1</Prereq>
+                <Prereq>Prerequisite 2</Prereq>
+			</Prerequisites>
+		</Course>
+        <Course Number="CS106B" Enrollment="1070"><!--този има задължителния Number атрбут и незадължителния атрибут Enrollment-->
+			<Title>Piton</Title>
+            <!--Нямаме Description-->
+			<Instructors><!--В случая е избран втория вариант 1 или няколко Professor и 0 или 1 Lecturer-->
+                <Professor>
+				    <First_Name>Georgi</First_Name>
+				    <Middle_Initial>T.</Middle_Initial>
+				    <Last_Name>Georiev</Last_Name>
+                    <!--Professor има First_Name,Last_Name и в случая има Middle_Initial-->
+			    </Professor>
+				<Lecturer>
+					<First_Name>Stoian</First_Name>
+					<Last_Name>Stoianov</Last_Name>
+                    <!--Lecturer има First_Name,Last_Name и в случая няма Middle_Initial-->
+				</Lecturer>
+			</Instructors>
+            <!--Нямаме Prerequisites-->
+		</Course>
+	</Department>
+</Course_Catalog>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--Добавяме вътрешна dtd граматика games е root елементът-->
+<!DOCTYPE games[
+<!ELEMENT games (game*)>
+<!--има звездичка, тъй като може да има няколко игри(в случая е само една)-->
+<!ELEMENT game (home-team,ex-team,scores,yellows,reds)>
+<!ATTLIST game score CDATA #REQUIRED>
+<!--Всяка игра(game) има задължителен атрибут score(резлтатът от мача)-->
+<!ELEMENT home-team (#PCDATA)><!--home-team е от тип #PCDATA-->
+<!ELEMENT ex-team (#PCDATA)><!--ex-team е от тип #PCDATA-->
+<!ELEMENT scores (score*)>
+<!--вкараните голове те ще са 0 или повече-->
+<!ELEMENT score (player)>
+<!--всеки гол е вкаран от точно един играч-->
+<!ATTLIST score te CDATA #REQUIRED>
+<!--всеки гол има задължителен атриут te - времето в което е вкаран-->
+<!ELEMENT player (#PCDATA)><!--player е от тип #PCDATA-->
+<!ELEMENT yellows (player*)>
+<!--жълти картони са получени от 0 или няколко играча-->
+<!ELEMENT reds (player*)>
+<!--червени картони са получени от 0 или няколко играча-->
+]>
+<!--Примерно xml съдържание за да се тества dtd граматиката-->
+<games>
+    <game score="2-1">
+        <home-team>Sofia</home-team>
+        <ex-team>Plovidv</ex-team>
+        <scores><!--Головете вкарани в мача-->
+            <score te="25"><!--te минутата в която е вкаран гола-->
+            <player>Ivan</player><!--Името на играчът вкарал гола-->
+            </score>
+            <score te="75">
+            <player>Petar</player>
+            </score>
+        </scores>
+        <yellows><!--Списък от играчите с жълти каротни-->
+           <player>Georgi</player>
+        </yellows>
+        <reds><!--Списък от играчите с червени каротни-->
+            <player>Stoian</player>
+            <player>Mitko</player>
+        </reds>
+    </game>
+</games>
