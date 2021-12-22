@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE channel SYSTEM "Zad9a.dtd">
+<channel version="123">
+    <item>
+        <title>My item title 1</title>
+        <link>www.linkitem1.com</link>
+        <description>Description of item 1</description>
+    </item>
+    <item>
+        <description>Description of item 2</description>
+        <title>My item title 2</title>
+        <link>www.linkitem2.com</link>
+    </item>    
+    <item>
+        <link>www.linkitem3.com</link>    
+        <title>My item title 3</title>
+    </item>
+    <title>My title</title>
+    <link>www.link.com</link>
+    <!-- В този случай изключваме тези елементи
+    <image>
+        <title>My img title 1</title>
+        <link>www.linkimg1.com</link>
+        <url>Url1</url>
+    </image>
+    <image>
+        <link>www.linkimg2.com</link>
+        <url>Url2</url>
+        <title>My img title 2</title>
+    </image>
+    <language>English</language>
+    -->
+    <description>Some description</description>
+</channel>

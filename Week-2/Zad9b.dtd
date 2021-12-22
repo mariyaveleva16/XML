@@ -1,0 +1,17 @@
+<!--Създаваме си 2 entity едното включващо всички елементи, другото част от тях-->
+<!ENTITY %channelAll "(item+,title,link,image*,language?,description)"><!--съдържащо всички-->
+<!ENTITY %channelPart "(item+,title,link,description)"><!--съдуржащо част от елементите-->
+<!ENTITY %variantAll "INCLUDE"><!--В случая ще използваме всички елементи за това на ENTITY %variantAll задаваме стойност INCLUDE-->
+<!ENTITY %variantPart "IGNORE"><!--а на ENTITY %variantPart - IGNORE-->
+<![%variantAll; [<!ELEMENT channel %channelAll;]]<!--channel ще съдържа всички елемените от channelAll-->
+<![%variantPart; [<!ELEMENT channel %channelPart;]]<!--ще се игнорира тъй като %variantPart; е със стойност IGNOR-->
+<!ATTLIST channel version CDATA #IMPLIED>
+<!ELEMENT item ((title,link,description?)|(link,title,description?)|(title,description?,link)|
+				(link,description?,title)|(description?,title,link)|(description?,link,title))>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT image ((title,link,url)|(title,url,link)|(link,url,title)|
+                (link,title,url)|(url,title,link)|(url,link,title))>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
