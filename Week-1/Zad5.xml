@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Exceltable>
+	<row r="0">
+		<column>Condition</column>
+		<column>Operator</column>
+		<column>Formula Example</column>
+		<column>Description</column>
+	</row>
+	<row r="1">
+		<column>Equal to</column>
+		<column><![CDATA[=]]></column>
+		<column><![CDATA[=A1=B1]]></column>
+		<column><![CDATA[if(A1==B1) allert("TRUE") else allert("FALSE")]]></column>
+	</row>
+	<row r="2">
+		<column>Not equal to</column>
+		<column><![CDATA[<>]]></column>
+		<column><![CDATA[=A1<>B1]]></column>
+		<column><![CDATA[if(A1<>B1) allert("TRUE") else allert("FALSE")]]></column>
+	</row>
+	<row r="3">
+		<column>Greater than</column>
+		<column>&gt;</column>
+		<column>A1 &gt; B1</column>
+		<column><![CDATA[if(A1>B1) allert("TRUE") else allert("FALSE")]]></column>
+	</row>
+	<row r="4">
+		<column>Less than</column>
+		<column>&lt;</column>
+		<column>A1 &lt; B1</column>
+		<column><![CDATA[if(A1<B1) allert("TRUE") else allert("FALSE")]]></column>
+	</row>
+	<row r="5">
+		<column>Greater than or equal to</column>
+		<column><![CDATA[>=]]></column>
+		<column><![CDATA[=A1>=B1]]></column>
+		<column><![CDATA[if(A1>=B1) allert("TRUE") else allert("FALSE")]]></column>
+	</row>
+	<row r="6">
+		<column>Less than or equal to</column>
+		<column><![CDATA[<=]]></column>
+		<column><![CDATA[=A1<=B1]]></column>
+		<column><![CDATA[if(A1<=B1) allert("TRUE") else allert("FALSE")]]></column>
+	</row>
+</Exceltable>
