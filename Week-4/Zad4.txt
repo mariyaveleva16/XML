@@ -1,0 +1,44 @@
+1.1 Селектира всички стойности на елемента track, който е под-елемент на tracklist, имащ атрибут num равен на 1.
+      Вариант 1 за всеки track от tracklist с num=1 се връща стойността на track
+	for $o in catalog/cd/tracklist[@num = "1"]/track
+      	return $o
+      Вариант 2 за всеки traklist се проврява дали атибута num=1 и се връшат стойностите на track ако условието е изпълнено
+	for $о in /catalog/cd/tracklist
+	where $о/@num="1"
+	return $о/track/text()
+1.2 Подреждаме резултата от 1. по азбучен ред
+Използваме вариант 1 от задача 1.1 и подреждаме track елементите по азбучен ред
+      for $o in catalog/cd/tracklist[@num = "1"]/track
+      order by $o
+      return $o
+1.3 Подреждаме резултата от 1. в обратен азбучен ред
+Използваме вариант 1 от задача 1.1 и подреждаме track елементите в обратен ред
+    for $track in catalog/cd/tracklist[@num = "1"]/track
+    order by $track descending 
+    return $track 	
+2.
+      for $o in catalog/cd <!--За всяко cd от catalog-->
+      return
+	element records{
+         element record {
+            attribute cd_ID <!--Връща id на cd-->
+            {
+                  $o/@id
+            }, 
+            attribute artist  <!--Името на артиста-->
+            {
+               $o/artist
+            },
+            element info { <!--Описание на елемента в следния вид-->
+               text { "Title:"}, text {$o/title}, <!--Title:cd title-->
+               text { ", Year:"} ,text{$o/year}, <!--Year:cd year-->
+               text { ", Track numbers:"}, text{count($o/tracklist/track)} <!--Track numbers:броя на track елемантие за всеки tracklist-->
+            }
+         }
+   	}
+3. Извеждаме всички track елемени като заместваме всички интервали с '_' и извеждаме позицията на всеки елемент (с позицията не ми се получава)
+   element tracks{
+	for $o in catalog/cd/tracklist/track
+	let $i:= replace($o, ' ', '_')
+	return <track>{$i}_{position()}</track>
+	}

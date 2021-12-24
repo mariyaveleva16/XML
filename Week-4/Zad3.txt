@@ -1,0 +1,34 @@
+1.1 Извежда стойност на атрибут на tracklist
+self::node()/descendant-or-self::node()/child::tracklist/attribute::num
+ 
+1.2 Извежда стойност на year 
+self::node()/descendant-or-self::node()/child::year
+
+2. Избира атрибутите num и id съответно на елементите tracklist и cd
+self::node()/descendant-or-self::node()/attribute::id | self::node()/descendant-or-self::node()/child::tracklist/attribute::num
+
+3. Избира всички елементи track, които се намират преди track елемента със стойност 'Doschitay do sta (Countdown)'
+Намираме noda със стойност равна на 'Doschitay do sta (Countdown)' и след това взимаме всички преди него от тип track
+//track[text()='Doschitay do sta (Countdown)']/preceding::track
+
+4. Избира всички елементи track, които се намират след track елемента със стойност 'Doschitay do sta (Countdown)'
+Намираме noda със стойност равна на 'Doschitay do sta (Countdown)' и след това взимаме всички след него от тип track
+//track[text()='Doschitay do sta (Countdown)']/following::track
+
+5. Избира всички елементи track, които се намират след track елемента със стойност 'Doschitay do sta (Countdown)' и имат стойност на атрибута length '4:04'
+Намираме noda със стойност равна на 'Doschitay do sta (Countdown)' и след това взимаме всички преди него от тип track имащи атрибут length със стоност 4:04
+//track[text()='Doschitay do sta (Countdown)']/following::track[attribute::length='4:04']
+
+6. Избира всички стойности на под-елементите на всички елементи cd в документа
+под-елементи на елементи на cd е две нива навътре в йерархията
+/catalog/cd/child::*/child::*
+
+7. Избира стойностите на всички елементи, които имат атрибут с име id
+//attribute::id - ще изведе само стойностите на id но не и на елементите които имат id
+//child::*[attribute::id]
+
+8. Стойностите на всички елементи, които имат какъвто и да било атрибут
+//child::*[attribute::*]
+
+9. Атрибута num с максимална стойност
+max(//attribute::num)
