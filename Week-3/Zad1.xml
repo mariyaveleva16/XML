@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Zad1.xsd">
+    <description>My desctiption</description>
+    <recipe>
+        <title>My title</title>
+        <ingredient name="1">
+            <preparation>
+                <step>step 1</step>
+            </preparation>
+        </ingredient>
+        <preparation>
+            <step>step 2</step>
+        </preparation>
+        <nutrition protein="1" carbohydrates="2" fat="3" calories="12" />
+    </recipe>
+</collection>
