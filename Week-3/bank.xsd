@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified">
+<xs:element name="bank">
+    <xs:complexType>
+		<xs:all>
+			<xs:element ref="accounts" />
+            <xs:element ref="customers" />
+            <xs:element ref="customer_accounts" />
+		</xs:all>
+	</xs:complexType>
+</xs:element>
+<xs:element name="accounts">
+    <xs:complexType>
+		<xs:all>
+			<xs:element ref="saving_accounts" />
+            <xs:element ref="checking_accounts" />
+		</xs:all>
+	</xs:complexType>
+</xs:element>
+<xs:element name="saving_accounts">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="saving_account" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="saving_account">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element name="balance" type="xs:integer" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/> 
+        <xs:attribute name="interest" type="xs:decimal" use="required"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="checking_accounts">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="checking_account" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="checking_account">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="balance" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/> 
+	</xs:complexType>
+</xs:element>
+<xs:simpleType name="minBalance">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="-5000" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="maxBalance">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="50000" />
+		</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="balance">
+     <xs:union memberTypes="minBalance maxBalance"/>
+</xs:simpleType>
+<xs:element name="customer">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+            <xs:element name="address" type="xs:string" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required" />
+	</xs:complexType>
+</xs:element>
+<!--Частта която предефинираме-->
+<xs:redefine schemaLocation="Zad3.xsd">
+    <xs:element name="customers">
+        <xs:complexType>
+            <xs:sequence>
+                <!--използваме customerExt вмето customer-->
+                <xs:element ref="customerExt" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!--нов тип customerExt, който разширява дефиницията на типа customer като добавя нов негов под-елемент contacts-->
+    <xs:element name="customerExt">
+        <xs:complexType>
+            <xs:complexContenet>
+                <xs:extension base="customer">
+                    <xs:sequence>
+                        <xs:element ref="contacts" minOccurs="1"/><!--анотация описваща предназначение-->
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContenet>
+        </xs:complexType>
+    <xs:element>
+    <!--contacts, който от своя страна се състои от 2 под-елемента - email и telephone-->
+    <xs:element name="contacts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="telephone" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    <xs:element>
+</xs:redefine>
+<xs:element name="customer_accounts">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="customer_account" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="customer_account">
+    <xs:complexType>
+		<xs:attribute name="c_id" type="xs:IDREF" use="required" />
+        <xs:attribute name="ac_id" type="xs:IDREF" use="required" />
+	</xs:complexType>
+</xs:element>
+</xs:schema>

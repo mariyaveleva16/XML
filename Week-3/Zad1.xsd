@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified">
+<!--Показва, че елементите и типовете данни, използвани в схемата, идват от пространството на имената "http://www.w3.org/2001/XMLSchema". 
+Също така уточнява, че елементите и типовете данни, които идват от пространството, трябва да бъдат с префикс xs
+elementFromDefault="qualified" показва, че всички елементи, използвани от документа на XML екземпляр,
+ които са били декларирани в тази схема, трябва да са квалифицирани за пространството на имена.-->
+<xs:element name="collection"><!--root елемент-->
+	<xs:complexType>
+		<xs:sequence><!--елементите са в точно определена последователност-->
+            <!--елементът desctipion може да бъде със всякакво съдържание-->
+			<xs:element name="description" type="xs:anyType" />
+            <!--Референция(ref) – за преизползване на recipe, среща се минимум 0 и максимум неопределен брой пъти(* е dtd)-->
+			<xs:element ref="recipe" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="recipe"><!--Описание на recipe-->
+	<xs:complexType>
+		<xs:sequence><!--Поделементите на recipe-->
+			<!--Поделемент title от тип #PCDATA, xml схемата е записва string-->
+			<xs:element name="title" type="xs:string" />
+			<!--Референция(ref) – за преизползване на ingredient, среща се минимум 0 и максимум неопределен брой пъти(* е dtd)-->
+			<xs:element ref="ingredient" minOccurs="0" maxOccurs="unbounded" />
+			<!--Референция(ref) – за преизползване на preparation-->
+			<xs:element ref="preparation" />
+			<!--Поделемент comment от тип #PCDATA, xml схемата е записва string, среща се 0 или 1 път(? в dtd)-->
+			<xs:element name="comment"  type="xs:string" minOccurs="0" maxOccurs="1" />
+			<!--Референция(ref) – за преизползване на nutrition, елементът няма съдържание само атрибути-->
+			<xs:element ref="nutrition" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="ingredient"><!--Описание на ingredient-->
+	<xs:complexType>
+		<xs:sequence>
+			<!--Референция(ref) – за преизползване на preparation, среща се 0 или 1 път(? е dtd)-->
+			<xs:element ref="preparation" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<!--ingredient има няколко атрибута и създаваме атрибутна група-->
+		<xs:attributeGroup ref="atributeIngredient" />
+	</xs:complexType>
+</xs:element>
+<xs:element name="preparation"><!--Описание на preparation-->
+	<xs:complexType>
+		<xs:sequence>
+			<!--Поделемент comment от тип #PCDATA, xml схемата е записва string,среща се минимум 0 и максимум неопределен брой пъти(* е dtd)-->
+			<xs:element name="step" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="nutrition"><!--Описание на nutrition-->
+	<xs:complexType>
+		<!--ingredient има няколко атрибута и създаваме атрибутна група-->
+		<xs:attributeGroup ref="attributeNutrition" />
+	</xs:complexType>
+</xs:element>
+<xs:attributeGroup name="atributeIngredient"><!--Описание на atributeIngredient-->
+	<!--Атрибутите са от тип string(#PCDATA), name е задължителен атрибут -->
+	<xs:attribute name="name" type="xs:string" use="required" />
+	<xs:attribute name="amount" type="xs:string" />
+	<xs:attribute name="unit" type="xs:string" />
+</xs:attributeGroup>
+<xs:attributeGroup name="attributeNutrition"><!--Описание на attributeNutrition-->
+	<!--Атрибутите са от тип string(#PCDATA); всички атрибути освен alcohol са задължителни-->
+	<xs:attribute name="protein" type="xs:string" use="required" />
+	<xs:attribute name="carbohydrates" type="xs:string" use="required" />
+	<xs:attribute name="fat" type="xs:string" use="required" />
+	<xs:attribute name="calories" type="xs:string" use="required" />
+	<xs:attribute name="alcohol" type="xs:string" />
+</xs:attributeGroup>
+</xs:schema>

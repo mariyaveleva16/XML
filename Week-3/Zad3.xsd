@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		elementFormDefault="qualified">
+<xs:element name="bank">
+    <xs:complexType>
+		<xs:all>
+			<xs:element ref="accounts" />
+            <xs:element ref="customers" />
+            <xs:element ref="customer_accounts" />
+		</xs:all>
+	</xs:complexType>
+</xs:element>
+<xs:element name="accounts">
+    <xs:complexType>
+		<xs:all>
+			<xs:element ref="saving_accounts" />
+            <xs:element ref="checking_accounts" />
+		</xs:all>
+	</xs:complexType>
+</xs:element>
+<xs:element name="saving_accounts">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="saving_account" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="saving_account">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element name="balance" type="xs:integer" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/> 
+        <xs:attribute name="interest" type="xs:decimal" use="required"/>
+	</xs:complexType>
+</xs:element>
+<xs:element name="checking_accounts">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="checking_account" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="checking_account">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="balance" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/> 
+	</xs:complexType>
+</xs:element>
+<!--два прости типа, задаващи горна и долна граница на стойността на елемента balance-->
+<xs:simpleType name="minBalance">
+    <xs:restriction base="xs:integer">
+        <xs:minInclusive value="-5000" /><!--минимална стойност на балансът по сметката-->
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="maxBalance">
+    <xs:restriction base="xs:integer">
+        <xs:minInclusive value="50000" /><!--максимална стойност на балансът по сметката-->
+    </xs:restriction>
+</xs:simpleType>
+<!--Прост тип, който е обединение от други два прости типа-->
+<xs:simpleType name="balance">
+    <xs:union memberTypes="minBalance maxBalance"/>
+</xs:simpleType>
+<xs:element name="customers">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="customer" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="customer">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+            <xs:element name="address" type="xs:string" />
+		</xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required" />
+	</xs:complexType>
+</xs:element>
+<xs:element name="customer_accounts">
+    <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="customer_account" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="customer_account">
+    <xs:complexType>
+		<xs:attribute name="c_id" type="xs:IDREF" use="required" />
+        <xs:attribute name="ac_id" type="xs:IDREF" use="required" />
+	</xs:complexType>
+</xs:element>
+</xs:schema>
