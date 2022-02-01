@@ -1,0 +1,56 @@
+body { 
+    background-color: #FFFF00;/*правим цялата страница с жълт цвят*/
+} 
+
+.h1 { /*Форматираме всчки заглавия*/
+    color: #008080; 
+    font-size: 24px; 
+    font-family: "Arial"; 
+    font-weight: bold; 
+} 
+
+table.green { /*Форматираме първата таблица*/
+    border: 3px solid #111111; 
+    padding: 0px; 
+    border-spacing: 0px; 
+    border-collapse: collapse; 
+    width: 50%; 
+    background-color: #00ff00; 
+} 
+
+table.blue { /*форматираме втората таблица*/
+    border: 3px solid #111111; 
+    padding: 0px; 
+    border-spacing: 0px; 
+    border-collapse: collapse; 
+    width: 50%; 
+    background-color: 00ffff; 
+} 
+
+tr { /*отделяме двете колони на талицата*/
+    width: 50%; 
+    border: 1px solid black; 
+}
+
+td { /*отделяме двете колони на талицата*/
+    width: 50%; 
+    border: 1px solid black; 
+} 
+
+td.bold { /*болтваме текста на заглавните редове на таблицата и го центрирме*/
+    font-weight: bold; 
+    text-align: center; 
+} 
+
+td.right { /*слагаме текста от десните колони да е разположен в дясно*/
+    text-align: right;
+} 
+
+a:link { /*линкът да е в зелено*/
+    color: #00FF00; 
+} 
+
+.normalP { /*Нормалинте параграфи с шрифт ариел и с определения цвят*/
+    font-family: "Arial"; 
+    color: #996600; 
+}
