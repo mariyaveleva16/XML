@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>Zad8</title> <!--име на страницата-->
+    </head> 
+    <body> 
+        <h1>Task 8 for including inline SVG with &lt;use> example</h1><!--Заглавен текст в html документа--> 
+            <svg><!--включваме SVG елемент в HTML документ като с xlink посочваме външния ресурс и кой точно елемент използваме-->
+                <use xlink:href="svg1.svg#circle"></use> 
+            </svg> 
+            <svg> 
+                <use xlink:href="svg1.svg#retangle"></use> 
+            </svg> 
+    </body> 
+</html>
