@@ -1,0 +1,97 @@
+channel { /*форматираме channel*/
+    display: flex; 
+    flex-direction: column;
+    background-color: white; 
+    color: black; 
+    font-size: 14px; 
+}
+item { /*общо форматираме за item елементите*/
+    padding-top: 10px; 
+    display: flex;
+    flex-direction: column;
+}
+/*поделементите на item форматираме по различен начин - за всеки елемнт имаме отделно*/
+item title { /*форматиране за поделемета title*/
+    color: black; /*черен цвяр на текста*/
+    background-color: antiquewhite;/*цвят на фона*/
+    font-size: 25px; /*размер на текста*/
+    text-indent: 20px; /*отмстване надясно*/
+}
+item link {  /*форматиране за поделемета link*/
+    background-color: green; 
+    color:white; 
+    padding: 5px; 
+    font-size: 10px; 
+    text-indent: 25px; 
+}
+item description { /*форматиране за поделемета description*/
+    color: black; 
+    font-size: 15px; 
+    text-indent: 20px; 
+    margin: 5px; 
+    padding: 5px; 
+}  
+/*поделементите на textinput трябва да са еднакво форматирани 
+за това няма нужда се изписва всеки поотделно*/
+textinput { 
+    display: flex; 
+    flex-direction: row;
+    font-size: 20px; 
+    text-indent: 20px; 
+} 
+textinput *{ 
+    color: red;
+    text-decoration: underline;  
+} 
+/*CSS дефиниция, която форматира по различен начин под-елементите на 
+item - title, description и link, взависимост от размера на екрана на клиента при минимален размер 600px*/
+@media screen and (min-width: 600px) { 
+    /*новото форматиране на поделемените на item в зависимост от екрана*/
+    item title { 
+       background-color: yellow; 
+       color: black; 
+       font-size: 15px; 
+       text-indent: 20px; 
+    }
+    item link{ 
+       background-color: white; 
+       color: blue; 
+       font-size: 10px; 
+       text-indent: 20px; 
+    }  
+    item description { 
+       background-color: green; 
+       color: black; 
+       font-size: 15px; 
+       text-indent: 20px;
+    }
+} 
+/*CSS дефиниция, която форматира по различен начин под-елементите на 
+item - title, description и link, взависимост от изхода на клиента - принтер*/
+@media print { 
+    /*новото форматиране на поделемените на item в зависимост от изхода - за принтене*/
+    item title { 
+       background-color: pink; 
+       color: black; 
+       margin: 5px; 
+       padding: 5px; 
+       font-size: 12px; 
+       text-indent: 20px; 
+    } 
+    item link { 
+       background-color: orange; 
+       color: rgb(136, 136, 204); 
+       margin: 5px; 
+       padding: 5px; 
+       font-size: 11px; 
+       text-indent: 20px; 
+    } 
+    item description {
+       background-color: purple; 
+       color: black;
+       margin: 5px; 
+       padding: 5px;  
+       font-size: 15px; 
+       text-indent: 20px; 
+    } 
+}
