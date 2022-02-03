@@ -1,0 +1,45 @@
+body { /*форматиране на главния елемент и синята рамка която го огражда*/
+    margin: auto; 
+    width: 650px; 
+    padding: 10px;
+    background-color: #e8e8e8; 
+    border: 3px solid #1e64cc; 
+    border-bottom-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+}
+
+#blockSection { /*разположение на елементите с id blockSection*/
+    display:block; 
+}
+
+.picture { /*определяме размера на картинките и рамките им*/
+    width: 310px; 
+    height: 150px; 
+    display: inline-block;
+    border: 6px solid #a0a7c1; 
+    border-radius: 20px; 
+}
+
+#text { /*форматиране на елементите с id text*/
+    width: 300px; /*широчина на всеки текстови блок*/
+    height: 200px;/*височина на всеки текстови блок*/
+    /*разпложение на екрана*/
+    display: inline-block;  
+    overflow: auto;
+    margin-top: 20px; 
+    padding-left: 5px; 
+    padding-right: 5px; 
+    background-color: yellow; /*фон*/
+    border-top: 6px dashed #289030; /*горната рамка*/
+    border-bottom: 3px solid #5f4dc5; /*долната рамка*/
+    border-left: 6px double orange; /*рамката от ляво*/
+}
+
+p { /*параграфите да са с форматиране inline*/
+    display:inline; 
+} 
+
+.boldAndUnderline { /*текстът на елемента трябва да е болтнат и подчертан*/
+    font-weight: bold; 
+    text-decoration: underline; 
+}
