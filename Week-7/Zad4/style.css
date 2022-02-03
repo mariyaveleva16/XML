@@ -1,0 +1,57 @@
+body { /*текстът в <body> ще бъде кафяв ако не бъде променен*/
+    color: brown; 
+}
+
+p:first-of-type { /*представлява първия елемент от тип <p> сред група различни*/
+    background: green; 
+    color:yellow; 
+} 
+ 
+.warning > *[lang^=en] { /*текстът на всички елементи имащи атрибут започващ с en, които са поделементина клас warning*/
+    color: green; 
+} 
+ 
+*[lang^=en] { /*текстът на всички елементи имащи атрибут започващ с en*/
+    color: black; 
+} 
+ 
+.warning { /*текстът на елементите от клас warning*/
+    color: red; 
+} 
+ 
+.warning > span:not([lang]) { /*текстът на всички елементи, които са поделементина клас warning, но нямат атрибут lang*/
+    background: yellow; 
+    color:blue; 
+} 
+ 
+#maincontent { /*на елемента с id maincontent добавяме рамка*/
+    border: 1px solid blue; 
+} 
+ 
+p + p + div { /*<div> пред който има 2 елемента от тип <p>*/
+    color: orange; 
+    text-transform: uppercase; 
+    text-indent: 20px 
+} 
+ 
+p ~ div { /*Избира всеки елемент <p>, предшестван от елемент <div>*/
+    color: red; 
+}
+ 
+code { /*текста на елемента <code>*/
+    color: green; 
+} 
+ 
+div + p { /*Избира всички <p> елементи, които се поставят непосредствено след <div> елементи*/
+    color: blue; 
+} 
+
+div + p::first-line { /*Избира първия ред на всички <p> елементи, които се поставят непосредствено след <div> елементи*/
+    background-color: green; 
+    color: yellow; 
+} 
+
+div + p:first-letter { /*Избира првата буква на всички <p> елементи, които се поставят непосредствено след <div> елементи*/
+    color: orange; 
+    font-size: 33px; 
+}
