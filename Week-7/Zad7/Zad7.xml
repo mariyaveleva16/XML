@@ -1,0 +1,29 @@
+<?xml version="1.0"?> 
+<!--Задаваме спецификация и namespace за xlink и включваме schema-->
+<book xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd"> 
+    <chapters> 
+        <chapter 
+            xlink:type="simple" 
+            xlink:href="numbers.xml#xpointer(id('number1'))" 
+            xlink:show="new"> 
+            <!--chapter има трите задължителни атрибута:
+            type – глобален атрибут от XLink namespace, задаващ тип на връзката в случая:
+            simple - притежават само една дъга, с локален начален ресурс и отдалечен краен ресурс;
+            href - URI на ресурса (задължителен) и xpoint израз сочещ към елемент с id със стойност number1
+            show – описва поведението на представяне на href ресурса при траверс на връзката, в случая:
+            “new” - съдържанието на документа ще се покаже в нов прозорец-->
+            <content>
+                Introduction 
+            </content>
+        </chapter>
+        <chapter xlink:type="simple" 
+            xlink:href="numbers.xml#xpointer(id('number2'))" 
+            xlink:show="new">
+            <!--За xpointer(важи и за предишния chapter)-XPointer се добавя в края на URI като идентификатор за фрагмент, 
+            за да посочват конкретна част от XML съдържанието- елемент с id със стойност number2-->
+            <content>
+                Chapter1 
+            </content>
+        </chapter>
+    </chapters>
+</book>
