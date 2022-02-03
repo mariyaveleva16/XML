@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--root елемент с име book; xi- пространство на имената за xinclude;  xsi- за xml schema-->
+<book xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd"> 
+    <chapters> <!--поделемент chapters, може да има неограничен брой поделементи chapter-->
+        <!--включаме първия xml докумнет чрез include-->
+        <xi:include href="Introduction.xml" parse="xml"><!--href - URI референция към документа за включване, parse- вида на включвания документ-->
+            <xi:fallback><!--използва се като механизъм за възстановяване при липсващ ресурс--> 
+                <chapter> 
+                    <content> <!--всеки chapter си има content с текстово съдържание-->
+                        Contenet1
+                    </content> 
+                </chapter> 
+            </xi:fallback> 
+        </xi:include> 
+        <!--включаме и втория xml докумнет чрез include и е аналогично-->
+        <xi:include href="Chapter.xml" parse="xml"> 
+            <xi:fallback> 
+                <chapter> 
+                    <content> 
+                        Contenet2 
+                    </content> 
+                </chapter> 
+            </xi:fallback> 
+        </xi:include> 
+    </chapters> 
+</book>
