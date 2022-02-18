@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Задаваме си пространство на имената-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cd="http://www.myshop.bg/cd#">
+    <!--Описваме всеки ресурс като заместваме елементите <cd:artist>, <cd:country>, <cd:company>, <cd:price> и <cd:year> с атрибути като свойства на ресурса-->
+    <rdf:Description rdf:about="http://www.myshop.bg/cd/Soulsville" 
+        cd:artist="JornHoel"
+        cd:country="Norway"
+        cd:company="WEA"
+        cd:price="7.90"
+        cd:year="1996"
+    />
+    <rdf:Description rdf:about="http://www.myshop.bg/cd/Unchainmyheart" 
+        cd:artist="JoeCocker"
+        cd:country="USA"
+        cd:company="EMI"
+        cd:price="8.20"
+        cd:year="1987"
+    />
+    <rdf:Description rdf:about="http://www.myshop.bg/cd/PavarottiGalaConcert" 
+        cd:artist="LucianoPavarotti"
+        cd:country="UK"
+        cd:company="DECCA"
+        cd:price="9.90"
+        cd:year="1991"
+    />
+</rdf:RDF>
