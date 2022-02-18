@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Задаваме си пространство на имената-->
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xml:base="http://www.animals.fake/animals#">
+
+    <rdf:Description rdf:ID="animal">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    </rdf:Description>
+    <!--Rесурсът "horse" е подклас на класа "animal"-->
+    <rdf:Description rdf:ID="horse">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:subClassOf rdf:resource="#animal"/>
+    </rdf:Description>
+
+</rdf:RDF>
