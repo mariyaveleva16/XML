@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT universitiesBG (universityList,branchList,regionList)>
+<!ATTLIST universitiesBG
+  xmlns CDATA #FIXED ''
+  xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance'
+  xsi:noNamespaceSchemaLocation NMTOKEN #REQUIRED>
+
+<!ELEMENT universityList (university)+>
+<!ATTLIST universityList xmlns CDATA #FIXED ''>
+
+<!ELEMENT branchList (branch)+>
+<!ATTLIST branchList xmlns CDATA #FIXED ''>
+
+<!ELEMENT regionList (regionInfo)+>
+<!ATTLIST regionList xmlns CDATA #FIXED ''>
+
+<!ELEMENT university (universityInfo,facultyList)>
+<!ATTLIST university xmlns CDATA #FIXED ''>
+
+<!ELEMENT branch (seatName,universityRef)>
+<!ATTLIST branch xmlns CDATA #FIXED ''>
+
+<!ELEMENT regionInfo (regionName,regionRef)>
+<!ATTLIST regionInfo xmlns CDATA #FIXED ''>
+
+<!ELEMENT universityInfo (name,branchName?,location,region,id,regionId,
+                          telephone,secondTelephone?,year,students?,img,
+                          webSite?)>
+<!ATTLIST universityInfo xmlns CDATA #FIXED ''>
+
+<!ELEMENT facultyList (faculty)+>
+<!ATTLIST facultyList xmlns CDATA #FIXED ''>
+
+<!ELEMENT seatName (#PCDATA)>
+<!ATTLIST seatName xmlns CDATA #FIXED ''>
+
+<!ELEMENT universityRef EMPTY>
+<!ATTLIST universityRef xmlns CDATA #FIXED '' idRef CDATA #REQUIRED nameRef CDATA #REQUIRED>
+
+<!ELEMENT regionName (#PCDATA)>
+<!ATTLIST regionName xmlns CDATA #FIXED ''>
+
+<!ELEMENT regionRef EMPTY>
+<!ATTLIST regionRef xmlns CDATA #FIXED '' regIdRef CDATA #REQUIRED regRef CDATA #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name xmlns CDATA #FIXED ''>
+
+<!ELEMENT branchName (#PCDATA)>
+<!ATTLIST branchName xmlns CDATA #FIXED ''>
+
+<!ELEMENT location (#PCDATA)>
+<!ATTLIST location xmlns CDATA #FIXED ''>
+
+<!ELEMENT region (#PCDATA)>
+<!ATTLIST region xmlns CDATA #FIXED ''>
+
+<!ELEMENT id (#PCDATA)>
+<!ATTLIST id xmlns CDATA #FIXED ''>
+
+<!ELEMENT regionId (#PCDATA)>
+<!ATTLIST regionId xmlns CDATA #FIXED ''>
+
+<!ELEMENT telephone (#PCDATA)>
+<!ATTLIST telephone xmlns CDATA #FIXED ''>
+
+<!ELEMENT secondTelephone (#PCDATA)>
+<!ATTLIST secondTelephone xmlns CDATA #FIXED ''>
+
+<!ELEMENT year (#PCDATA)>
+<!ATTLIST year xmlns CDATA #FIXED ''>
+
+<!ELEMENT students (#PCDATA)>
+<!ATTLIST students xmlns CDATA #FIXED ''>
+
+<!ELEMENT img EMPTY>
+<!ATTLIST img xmlns CDATA #FIXED '' src ENTITY #REQUIRED>
+
+<!ELEMENT webSite (#PCDATA)>
+<!ATTLIST webSite xmlns CDATA #FIXED '' href CDATA #REQUIRED>
+
+<!ELEMENT faculty (#PCDATA)>
+<!ATTLIST faculty xmlns CDATA #FIXED ''>
+
+<!NOTATION jpg PUBLIC "image/jpg">
+<!ENTITY su PUBLIC "images/1.jpg" '' NDATA jpg>
+<!ENTITY tu PUBLIC "images/2.jpg" '' NDATA jpg>
+<!ENTITY natfiz PUBLIC "images/3.jpg" '' NDATA jpg>
+<!ENTITY amvr PUBLIC "images/4.jpg" '' NDATA jpg>
+<!ENTITY vsuLK PUBLIC "images/5.jpg" '' NDATA jpg>
+<!ENTITY vtu PUBLIC "images/6.jpg" '' NDATA jpg>
+<!ENTITY vuzf PUBLIC "images/7.jpg" '' NDATA jpg>
+<!ENTITY vutp PUBLIC "images/8.jpg" '' NDATA jpg>
+<!ENTITY va PUBLIC "images/9.jpg" '' NDATA jpg>
+<!ENTITY lu PUBLIC "images/10.jpg" '' NDATA jpg>
+<!ENTITY mu PUBLIC "images/11.jpg" '' NDATA jpg>
+<!ENTITY mgu PUBLIC "images/12.jpg" '' NDATA jpg>
+<!ENTITY nma PUBLIC "images/13.jpg" '' NDATA jpg>
+<!ENTITY nsa PUBLIC "images/14.jpg" '' NDATA jpg>
+<!ENTITY nha PUBLIC "images/15.jpg" '' NDATA jpg>
+<!ENTITY nbu PUBLIC "images/16.jpg" '' NDATA jpg>
+<!ENTITY unss PUBLIC "images/17.jpg" '' NDATA jpg>
+<!ENTITY uasg PUBLIC "images/18.jpg" '' NDATA jpg>
+<!ENTITY unibit PUBLIC "images/19.jpg" '' NDATA jpg>
+<!ENTITY htmu PUBLIC "images/20.jpg" '' NDATA jpg>
+<!ENTITY aubg PUBLIC "images/21.jpg" '' NDATA jpg>
+<!ENTITY uzu PUBLIC "images/22.jpg" '' NDATA jpg>
+<!ENTITY bsu PUBLIC "images/23.jpg" '' NDATA jpg>
+<!ENTITY vsu PUBLIC "images/24.jpg" '' NDATA jpg>
+<!ENTITY vvu PUBLIC "images/25.jpg" '' NDATA jpg>
+<!ENTITY vum PUBLIC "images/26.jpg" '' NDATA jpg>
+<!ENTITY iu PUBLIC "images/27.jpg" '' NDATA jpg>
+<!ENTITY muV PUBLIC "images/28.jpg" '' NDATA jpg>
+<!ENTITY tuV PUBLIC "images/29.jpg" '' NDATA jpg>
+<!ENTITY vtuKM PUBLIC "images/30.jpg" '' NDATA jpg>
+<!ENTITY nvu PUBLIC "images/31.jpg" '' NDATA jpg>
+<!ENTITY tuG PUBLIC "images/32.jpg" '' NDATA jpg>
+<!ENTITY vvuGB PUBLIC "images/33.jpg" '' NDATA jpg>
+<!ENTITY epu PUBLIC "images/34.jpg" '' NDATA jpg>
+<!ENTITY muP PUBLIC "images/35.jpg" '' NDATA jpg>
+<!ENTITY pu PUBLIC "images/36.jpg" '' NDATA jpg>
+<!ENTITY au PUBLIC "images/37.jpg" '' NDATA jpg>
+<!ENTITY amtii PUBLIC "images/38.jpg" '' NDATA jpg>
+<!ENTITY vuarr PUBLIC "images/39.jpg" '' NDATA jpg>
+<!ENTITY vusi PUBLIC "images/40.jpg" '' NDATA jpg>
+<!ENTITY muPL PUBLIC "images/41.jpg" '' NDATA jpg>
+<!ENTITY uht PUBLIC "images/42.jpg" '' NDATA jpg>
+<!ENTITY ru PUBLIC "images/43.jpg" '' NDATA jpg>
+<!ENTITY sa PUBLIC "images/44.jpg" '' NDATA jpg>
+<!ENTITY tru PUBLIC "images/45.jpg" '' NDATA jpg>
+<!ENTITY shu PUBLIC "images/46.jpg" '' NDATA jpg>
+<!ENTITY muVr PUBLIC "images/111.jpg" '' NDATA jpg>
+<!ENTITY tuP PUBLIC "images/201.jpg" '' NDATA jpg>
+<!ENTITY tuS PUBLIC "images/202.jpg" '' NDATA jpg>
+<!ENTITY muVT PUBLIC "images/281.jpg" '' NDATA jpg>
+<!ENTITY muS PUBLIC "images/282.jpg" '' NDATA jpg>
+<!ENTITY muSh PUBLIC "images/283.jpg" '' NDATA jpg>
+<!ENTITY puS PUBLIC "images/361.jpg" '' NDATA jpg>
+<!ENTITY puK PUBLIC "images/362.jpg" '' NDATA jpg>
+<!ENTITY ruS PUBLIC "images/431.jpg" '' NDATA jpg>
+<!ENTITY ruR PUBLIC "images/432.jpg" '' NDATA jpg>
+<!ENTITY tuH PUBLIC "images/451.jpg" '' NDATA jpg>
+<!ENTITY tuQ PUBLIC "images/452.jpg" '' NDATA jpg>
+<!ENTITY shuD PUBLIC "images/461.jpg" '' NDATA jpg>
