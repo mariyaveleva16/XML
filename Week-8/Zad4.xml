@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Задаваме си пространство на имената-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cd="http://www.myshop.bg/cd#">
+     <!--Описваме всеки ресурс с негорите свойства-->
+    <rdf:Description rdf:about="http://www.myshop.bg/cd/Soulsville"><!--Начален линк сочещ към ресурса-->
+        <cd:artist>Jorn Hoel</cd:artist>
+        <cd:country>Norway</cd:country>
+        <cd:company>WEA</cd:company>
+        <cd:price>7.90</cd:price>
+        <cd:year>1996</cd:year>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.myshop.bg/cd/PavarottiGalaConcert"> 
+        <cd:artist>Luciano Pavarotti</cd:artist> 
+        <cd:country>UK</cd:country> 
+        <cd:company>DECCA</cd:company> 
+        <cd:price>9.90</cd:price> 
+        <cd:year>1991</cd:year> 
+    </rdf:Description> 
+
+    <rdf:Description rdf:about="http://www.myshop.bg/cd/Unchainmyheart"> 
+      <cd:artist rdf:resource="http://www.myshop.bg/cd/joecocker" /> <!--Рефериране на ресурс-->
+      <cd:country>USA</cd:country> 
+      <cd:company>EMI</cd:company> 
+      <cd:price>8.20</cd:price> 
+      <cd:year>1987</cd:year> 
+    </rdf:Description> 
+
+    <!--Дефинираме описание за реферирания ресурс-->
+     <rdf:Description rdf:about="http://www.myshop.bg/cd/joecocker">
+        <cd:name>Joe Cocker</cd:name>
+        <cd:country>USA</cd:country>
+        <cd:born>dd-mm-yyyy</cd:born>
+        <cd:style>rock</cd:style>
+        <cd:homepage>http://www.joecocker.org</cd:homepage>
+    </rdf:Description>
+</rdf:RDF>
