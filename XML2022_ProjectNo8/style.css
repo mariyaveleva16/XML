@@ -1,0 +1,152 @@
+body {
+    background-color: #faf0e6;
+	font-family: Cambria Math;
+}
+h1{
+	margin-top: 50px;
+	font-size: 55px;
+	text-align:center;
+	color:#463733;
+}
+.button {
+    background-color: #8c6f67;
+	font-family: Cambria Math;
+    border: none;
+	border-radius:15px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	font-weight:bold;
+    margin: 4px 2px;
+	width:33%;
+    cursor: pointer;
+	position:relative;
+}
+button:focus {
+	background-color:#755c56;
+}
+button:hover {
+	background-color:#755c56;
+}
+p,a {
+	margin:0px;
+	margin-bottom: 5px;
+	margin-left:10px;
+	padding:0px;
+	font-size: 15px;
+	font-weight: bold;
+	text-overflow: ellipsis;
+}
+a{
+	color:white;
+}
+.university {
+    width: 100%;
+	height: 300px;
+	margin-top: 20px;
+    margin-bottom: 20px;
+	background-color: #bb9489;
+	padding: 0px;
+	border-radius: 15px;
+}
+.university img {
+	margin-right:0px;
+	height:300px;
+	width:400px;
+	float:right;
+	border-radius: 15px;
+}
+#uniName {
+	font-size: 30px;
+	display:table-header-group;
+}
+#information {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.label {
+	font-size: 20px;
+	font-style:bold;
+	margin-bottom: 0px;
+	margin-left:10px;
+	margin-top: 10px;
+}
+#uniInfo,#extraInfo,#contacts,#online {
+	width: 250px;
+	display: inline-block;
+	margin-top:0px;
+	margin-left: 0px;
+	vertical-align: top;
+	overflow: hidden;
+	position:relative;
+}
+.region, .branch{
+    width: 100%;
+    margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #bb9489;
+	padding: 0px;
+	padding-top: 20px;
+	padding-left: 0px;
+	border-radius: 15px;
+}
+.specialRegion, .specialBranch{
+    width: 100%;
+	height:225px;
+    margin-bottom: 30px;
+	padding: 0px;
+}
+.specialRegion img, .specialBranch img{
+	margin-right:0px;
+	height:220px;
+	width:300px;
+	display:block;
+	float:right;
+	border-radius: 15px;
+	padding-top:5px;
+}
+.information2 {
+	padding-top:5px;
+	padding-left: 20px;
+}
+#uniName1 {
+	font-size: 25px;
+	display:table-header-group;
+}
+#branchName {
+	font-size: 25px;
+	display:table-header-group;
+}
+.uniInfo2,.uniContacts {
+	width: 250px;
+	display: inline-block;
+	margin-left: 20px;
+	vertical-align: top;
+	overflow: hidden;
+	border-radius: 15px;
+}
+#seatLabel, #regionLabel{
+	font-size: 30px;
+	text-decoration: underline;
+	margin-bottom: 0px;
+}
+.dropdown {
+	position:relative;
+	display:inline-block;
+	cursor: pointer;
+}
+.dropdown-content {
+	display:none;
+	position:absolute;
+	background:#5d4a44;
+	min-width:600px;
+	box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding:12px 5px;
+	z-index:1;
+}
+.dropdown:hover .dropdown-content {
+	display:block;
+}
